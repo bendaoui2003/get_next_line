@@ -6,7 +6,7 @@
 /*   By: mbendaou <mbendaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 09:47:54 by mbendaou          #+#    #+#             */
-/*   Updated: 2026/11/21 11:41:02 by mbendaou         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:26:39 by mbendaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 2003
+#  define BUFFER_SIZE 5000
 # endif
 
 # include <stdlib.h>
@@ -28,7 +28,7 @@ typedef struct s_list
 
 char				*get_next_line(int fd);
 int					fill_stash(int fd, t_list **stash1);
-char				*list_copy(t_list *lst);
+char				*before_newline(t_list *lst);
 char				*after_newline(char *s);
 void				clean_node(t_list **stash1);
 t_list				*ft_lst_new(char *content);

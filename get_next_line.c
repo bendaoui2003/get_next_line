@@ -6,7 +6,7 @@
 /*   By: mbendaou <mbendaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 10:11:05 by mbendaou          #+#    #+#             */
-/*   Updated: 2026/11/21 12:11:59 by mbendaou         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:25:16 by mbendaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	fill_stash(int fd, t_list **stash1)
 	return (n);
 }
 
-char	*list_copy(t_list *lst)
+char	*before_newline(t_list *lst)
 {
 	char	*line;
 	int		len;
@@ -49,7 +49,7 @@ char	*list_copy(t_list *lst)
 	int		j;
 
 	len = line_len(lst);
-	line = malloc((len + 1) * sizeof(char));
+	line = malloc((len + 1));
 	if (line == NULL)
 		return (NULL);
 	j = 0;
@@ -133,7 +133,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (stash == NULL)
 		return (NULL);
-	line = list_copy(stash);
+	line = before_newline(stash);
 	if (line == NULL)
 	{
 		ft_clear(&stash);
